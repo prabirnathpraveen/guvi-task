@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./css/profile.css">
+</head>
+
+<body>
+    <div class="nav">
+        <button onclick="logout()" class="btn btn-primary">Log out</button>
+    </div>
+
+    <div class="container">
+        <div class="update-form">
+            <div class="welcome-section">
+                <h2 id="welcome-message"></h2>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label lab">Date Of Birth</label>
+                <input type="date" class="form-control" id="dob" placeholder="Enter your Date Of Birth">
+                <span id="dob-error" class="error-message"></span>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label lab">Age</label>
+                <input type="number" class="form-control" id="age" placeholder="Enter your age" readonly>
+                <span id="age-error" class="error-message"></span>
+            </div>
+            <div class="mb-3">
+                <label for="mobile" class="form-label lab">Mobile Number</label>
+                <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile number">
+                <span id="mobile-error" class="error-message"></span>
+            </div>
+            <div class="button-div">
+                <button type="submit" class="btn btn-primary btn-block" onclick="validateForm()">Update</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var clientName = localStorage.getItem("client-name");
+            if (clientName) {
+                var welcomeMessage = "Hi, " + clientName + "!";
+                document.getElementById("welcome-message").innerHTML = welcomeMessage;
+            }
+        });
+        $(document).on('change', '#dob', function() {
+            var dobInput = $(this).val();
+            var dob = new Date(dobInput);
+            var today = new Date();
+            var age = today.getFullYear() - dob.getFullYear();
+
+            var monthDiff = today.getMonth() - dob.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            $('#age').val(age);
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+.nav{
+    display: flex;
+    justify-content: end;
+    margin: 10px 10px 10px 10px ;
+}
+.update-form{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.button-div button{
+    outline: none !important;
+    margin-top: 10px;
+}
+.lab{
+    font-size: 14px;
+    font-weight: normal; 
+}
+.error-message {
+    color: red;
+    font-size: 11px;
+}

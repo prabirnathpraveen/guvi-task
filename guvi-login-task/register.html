@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="./css/register.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="./js/register.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <h2>Registration</h2>
+            <div class="mb-3">
+                <label for="firstname" class="form-label lab">First Name <span class="mandatory">*</span></label>
+                <input type="text" class="form-control" id="firstname" placeholder="Enter your first name">
+                <span id="firstname-error" class="error-message"></span>
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label lab">Last Name  </label>
+                <input type="text" class="form-control" id="lastname" placeholder="Enter your last name">
+                <span id="lastname-error" class="error-message"></span>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label lab">Email Address <span class="mandatory">*</span></label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <span id="email-error" class="error-message"></span>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label lab">Password <span class="mandatory">*</span></label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                <span id="password-error" class="error-message"></span>
+            </div>
+            <div class="mb-3">
+                <label for="confirm-password" class="form-label lab">Confirm Password <span class="mandatory">*</span></label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password">
+                <span id="confirm-password-error" class="error-message"></span>
+            </div>
+            <div class="button-div">
+                <button type="submit" class="btn btn-primary btn-block" onclick="validateForm()">Register</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

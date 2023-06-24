@@ -1,0 +1,22 @@
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.error-message {
+    color: red;
+    font-size: 11px;
+}
+.button-div{
+    margin-top: 8px;
+}
+.mandatory{
+    color: red;
+}
+.button-div button{
+    outline: none !important;
+}
+.lab{
+    font-size: 14px;
+    font-weight: normal; 
+}
